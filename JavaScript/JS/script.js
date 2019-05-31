@@ -32,13 +32,42 @@ nombre = prompt("Digite su nombre");
 
 alert(nombre);*/
 
-function myFunction(a, b) {
+/*function myFunction(a, b) {
     return a + b;
-}
+}*/
 
 //(alert(myFunction(7,8));
 
-alert(myFunction(parseInt(prompt("Digite un número")), parseInt(prompt("Digite otro número"))));
+//alert(myFunction(parseInt(prompt("Digite un número")), parseInt(prompt("Digite otro número"))));
+
+/*function getNames() {
+    var  pasajero1;
+}*/
+
+var pasajeros;
+
+var numPasajeros;
+
+function setNumPasajeros(num) {
+    numPasajeros = [parseInt(num)];
+    pasajeros = [numPasajeros];
+}
+
+function setNamesPassengers(pos, nombre) {
+    pasajeros[parseInt(pos)] = nombre;
+}
+
+
+
+setNumPasajeros(prompt("Digite el número de pasajero"));
+
+alert(numPasajeros);
+
+for(var i = 0; i < numPasajeros; i++) {
+    setNamesPassengers(i, prompt("Digite el nombmre del pasjero"));
+}
+
+
 
 
 
