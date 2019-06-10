@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
 /**
@@ -18,6 +19,8 @@ public class MenuPanel extends JPanel {
     private ImageIcon auxDimension, imgDashboard, imgTandP, imgUi, imgTypo, imgPages, imgMail, imgComponents, imgCharts;
 
     private JButton btnDashboard, btnTandP, btnUi, btnTypo, btnPages, btnMail, btnComponents, btnCharts;
+
+    private JSeparator sepDash;
 
     public MenuPanel() {
         initComponents();
