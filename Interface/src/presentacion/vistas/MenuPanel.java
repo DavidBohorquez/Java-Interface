@@ -15,9 +15,9 @@ import javax.swing.SwingConstants;
  */
 public class MenuPanel extends JPanel {
 
-    private ImageIcon auxDimension, imgDashboard, imgTandP, imgUi, imgTypo, imgMail, imgComponents, imgCharts;
+    private ImageIcon auxDimension, imgDashboard, imgTandP, imgUi, imgTypo, imgPages, imgMail, imgComponents, imgCharts;
 
-    private JButton btnDashboard, btnTandP, btnUi, btnTypo, btnMail, btnComponents, btnCharts;
+    private JButton btnDashboard, btnTandP, btnUi, btnTypo, btnPages, btnMail, btnComponents, btnCharts;
 
     public MenuPanel() {
         initComponents();
@@ -96,12 +96,30 @@ public class MenuPanel extends JPanel {
 
         add(btnTypo);
 
+        imgPages = new ImageIcon(getClass().getResource("/resource/images/pages.png"));
+
+        auxDimension = new ImageIcon(imgPages.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+
+        btnPages = new JButton("   Pages");
+        btnPages.setBounds(30, 241, 250, 24);
+        btnPages.setBorder(null);
+        btnPages.setContentAreaFilled(false);
+        btnPages.setFocusable(false);
+        btnPages.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnPages.setIcon(auxDimension);
+        btnPages.setFont(new Font("LuzSans-Book", Font.PLAIN, 19));
+        btnPages.setBackground(null);
+        btnPages.setForeground(Color.white);
+        btnPages.setHorizontalAlignment(SwingConstants.LEFT);
+
+        add(btnPages);
+
         imgMail = new ImageIcon(getClass().getResource("/resource/images/mail.png"));
 
         auxDimension = new ImageIcon(imgMail.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnMail = new JButton("   Mail Box");
-        btnMail.setBounds(30, 241, 250, 24);
+        btnMail.setBounds(30, 295, 250, 24);
         btnMail.setBorder(null);
         btnMail.setContentAreaFilled(false);
         btnMail.setFocusable(false);
@@ -119,7 +137,7 @@ public class MenuPanel extends JPanel {
         auxDimension = new ImageIcon(imgComponents.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnComponents = new JButton("   Components");
-        btnComponents.setBounds(30, 295, 250, 24);
+        btnComponents.setBounds(30, 349, 250, 24);
         btnComponents.setBorder(null);
         btnComponents.setContentAreaFilled(false);
         btnComponents.setFocusable(false);
@@ -137,7 +155,7 @@ public class MenuPanel extends JPanel {
         auxDimension = new ImageIcon(imgCharts.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnCharts = new JButton("   Charts");
-        btnCharts.setBounds(30, 349, 250, 24);
+        btnCharts.setBounds(30, 393, 250, 24);
         btnCharts.setBorder(null);
         btnCharts.setContentAreaFilled(false);
         btnCharts.setFocusable(false);
@@ -151,6 +169,38 @@ public class MenuPanel extends JPanel {
         add(btnCharts);
 
         setLayout(null);
+    }
+
+    public JButton getBtnDashboard() {
+        return btnDashboard;
+    }
+
+    public JButton getBtnTandP() {
+        return btnTandP;
+    }
+
+    public JButton getBtnUi() {
+        return btnUi;
+    }
+
+    public JButton getBtnTypo() {
+        return btnTypo;
+    }
+
+    public JButton getBtnPages() {
+        return btnPages;
+    }
+
+    public JButton getBtnMail() {
+        return btnMail;
+    }
+
+    public JButton getBtnComponents() {
+        return btnComponents;
+    }
+
+    public JButton getBtnCharts() {
+        return btnCharts;
     }
 
 }

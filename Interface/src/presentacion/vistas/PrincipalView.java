@@ -17,30 +17,30 @@ import presentacion.modelo.Modelo;
  * @author David Bohorquez
  */
 public class PrincipalView extends JFrame {
-
+    
     private Modelo modelo;
     private PrincipalController controlador;
-
+    
     private MenuPanel pnlMenu;
-
+    
     private JPanel panel1, users, visitors, task, alerts, menu, buttons, pie, grafica, info, augment;
-
+    
     private JLabel dashboard;
-
+    
     public PrincipalView(Modelo modelo) {
         this.modelo = modelo;
-
+        
         initComponents();
         asignarListeners();
     }
-
+    
     public void initComponents() {
         panel1 = new JPanel();
         users = new JPanel();
         visitors = new JPanel();
         task = new JPanel();
         alerts = new JPanel();
-        menu = new /*JPanel()*/ MenuPanel();
+        menu = getPnlMenu();
         buttons = new JPanel();
         pie = new JPanel();
         grafica = new JPanel();
@@ -52,38 +52,38 @@ public class PrincipalView extends JFrame {
         info.setBounds(0, 50, 300, 150);
         buttons.setBounds(0, 200, 300, 50);
         menu.setBounds(0, 250, 300, 600);
-
+        
         users.setBounds(300, 0, 225, 100);
         visitors.setBounds(525, 0, 225, 100);
         task.setBounds(750, 0, 225, 100);
         alerts.setBounds(975, 0, 225, 100);
         grafica.setBounds(300, 100, 900, 530);
         pie.setBounds(300, 630, 900, 70);
-
+        
         augment.setBackground(new Color(16, 28, 98));
         info.setBackground(new Color(200, 224, 225));
         buttons.setBackground(new Color(184, 196, 201));
         menu.setBackground(new Color(16, 28, 98));
-
+        
         users.setBackground(new Color(43, 203, 213));
         visitors.setBackground(new Color(16, 28, 98));
         task.setBackground(new Color(43, 203, 213));
         alerts.setBackground(new Color(16, 28, 98));
         grafica.setBackground(new Color(200, 224, 225));
         pie.setBackground(new Color(43, 203, 213));
-
+        
         add(augment);
         add(info);
         add(buttons);
         add(menu);
-
+        
         add(users);
         add(visitors);
         add(task);
         add(alerts);
         add(grafica);
         add(pie);
-
+        
         setLayout(null);
         //setUndecorated(true);
         setResizable(false);
@@ -92,20 +92,34 @@ public class PrincipalView extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
     }
-
+    
     public void asignarListeners() {
-
+        pnlMenu.getBtnDashboard().addActionListener(getControlador());
+        pnlMenu.getBtnTandP().addActionListener(getControlador());
+        pnlMenu.getBtnUi().addActionListener(getControlador());
+        pnlMenu.getBtnTypo().addActionListener(getControlador());
+        pnlMenu.getBtnPages().addActionListener(getControlador());
+        pnlMenu.getBtnMail().addActionListener(getControlador());
+        pnlMenu.getBtnComponents().addActionListener(getControlador());
+        pnlMenu.getBtnCharts().addActionListener(getControlador());
     }
-
+    
     public Modelo getModelo() {
         return modelo;
     }
-
+    
     public PrincipalController getControlador() {
         if (controlador == null) {
             controlador = new PrincipalController(this);
         }
         return controlador;
     }
-
+    
+    public MenuPanel getPnlMenu() {
+        if (pnlMenu == null) {
+            pnlMenu = new MenuPanel();
+        }
+        return pnlMenu;
+    }
+    
 }
