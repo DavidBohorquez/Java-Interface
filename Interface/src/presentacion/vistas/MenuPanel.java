@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package presentacion.vistas;
 
 import java.awt.Color;
@@ -20,18 +15,18 @@ import javax.swing.SwingConstants;
  */
 public class MenuPanel extends JPanel {
 
-    private ImageIcon auxDimension, iDashboard, iTandP, iUi, iTypo;
+    private ImageIcon auxDimension, imgDashboard, imgTandP, imgUi, imgTypo, imgMail, imgComponents, imgCharts;
 
-    private JButton btnDashboard, btnTandP, btnUi, btnTypo;
+    private JButton btnDashboard, btnTandP, btnUi, btnTypo, btnMail, btnComponents, btnCharts;
 
     public MenuPanel() {
         initComponents();
     }
 
     public void initComponents() {
-        iDashboard = new ImageIcon(getClass().getResource("/resource/images/ihome.png"));
+        imgDashboard = new ImageIcon(getClass().getResource("/resource/images/ihome.png"));
 
-        auxDimension = new ImageIcon(iDashboard.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+        auxDimension = new ImageIcon(imgDashboard.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnDashboard = new JButton("    Dashboard");
         btnDashboard.setBounds(30, 25, 150, 24);
@@ -46,10 +41,10 @@ public class MenuPanel extends JPanel {
         btnDashboard.setHorizontalAlignment(SwingConstants.LEFT);
 
         add(btnDashboard);
-        
-        iTandP = new ImageIcon(getClass().getResource("/resource/images/editar.png"));
 
-        auxDimension = new ImageIcon(iTandP.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+        imgTandP = new ImageIcon(getClass().getResource("/resource/images/editar.png"));
+
+        auxDimension = new ImageIcon(imgTandP.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnTandP = new JButton("    Tabs & Panels");
         btnTandP.setBounds(30, 79, 250, 24);
@@ -64,10 +59,10 @@ public class MenuPanel extends JPanel {
         btnTandP.setHorizontalAlignment(SwingConstants.LEFT);
 
         add(btnTandP);
-        
-        iUi = new ImageIcon(getClass().getResource("/resource/images/documento.png"));
 
-        auxDimension = new ImageIcon(iUi.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+        imgUi = new ImageIcon(getClass().getResource("/resource/images/documento.png"));
+
+        auxDimension = new ImageIcon(imgUi.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnUi = new JButton("   Ui Elements");
         btnUi.setBounds(30, 133, 250, 24);
@@ -82,10 +77,10 @@ public class MenuPanel extends JPanel {
         btnUi.setHorizontalAlignment(SwingConstants.LEFT);
 
         add(btnUi);
-        
-        iTypo = new ImageIcon(getClass().getResource("/resource/images/typography.png"));
 
-        auxDimension = new ImageIcon(iTypo.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+        imgTypo = new ImageIcon(getClass().getResource("/resource/images/typography.png"));
+
+        auxDimension = new ImageIcon(imgTypo.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
 
         btnTypo = new JButton("   Typography");
         btnTypo.setBounds(30, 187, 250, 24);
@@ -100,13 +95,62 @@ public class MenuPanel extends JPanel {
         btnTypo.setHorizontalAlignment(SwingConstants.LEFT);
 
         add(btnTypo);
-        
-        
-        
-        
-        
 
-      setLayout(null);  
+        imgMail = new ImageIcon(getClass().getResource("/resource/images/mail.png"));
+
+        auxDimension = new ImageIcon(imgMail.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+
+        btnMail = new JButton("   Mail Box");
+        btnMail.setBounds(30, 241, 250, 24);
+        btnMail.setBorder(null);
+        btnMail.setContentAreaFilled(false);
+        btnMail.setFocusable(false);
+        btnMail.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnMail.setIcon(auxDimension);
+        btnMail.setFont(new Font("LuzSans-Book", Font.PLAIN, 19));
+        btnMail.setBackground(null);
+        btnMail.setForeground(Color.white);
+        btnMail.setHorizontalAlignment(SwingConstants.LEFT);
+
+        add(btnMail);
+
+        imgComponents = new ImageIcon(getClass().getResource("/resource/images/components.png"));
+
+        auxDimension = new ImageIcon(imgComponents.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+
+        btnComponents = new JButton("   Components");
+        btnComponents.setBounds(30, 295, 250, 24);
+        btnComponents.setBorder(null);
+        btnComponents.setContentAreaFilled(false);
+        btnComponents.setFocusable(false);
+        btnComponents.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnComponents.setIcon(auxDimension);
+        btnComponents.setFont(new Font("LuzSans-Book", Font.PLAIN, 19));
+        btnComponents.setBackground(null);
+        btnComponents.setForeground(Color.white);
+        btnComponents.setHorizontalAlignment(SwingConstants.LEFT);
+
+        add(btnComponents);
+
+        imgCharts = new ImageIcon(getClass().getResource("/resource/images/charts.png"));
+
+        auxDimension = new ImageIcon(imgCharts.getImage().getScaledInstance(24, 24, Image.SCALE_AREA_AVERAGING));
+
+        btnCharts = new JButton("   Charts");
+        btnCharts.setBounds(30, 349, 250, 24);
+        btnCharts.setBorder(null);
+        btnCharts.setContentAreaFilled(false);
+        btnCharts.setFocusable(false);
+        btnCharts.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnCharts.setIcon(auxDimension);
+        btnCharts.setFont(new Font("LuzSans-Book", Font.PLAIN, 19));
+        btnCharts.setBackground(null);
+        btnCharts.setForeground(Color.white);
+        btnCharts.setHorizontalAlignment(SwingConstants.LEFT);
+
+        add(btnCharts);
+
+        setLayout(null);
     }
 
 }
