@@ -1,3 +1,2 @@
 # Java-Interface
-Grupo de trabawjo interfaz grafica
-Super contribucion
+Grupo de trabajo interfaz grafica.
