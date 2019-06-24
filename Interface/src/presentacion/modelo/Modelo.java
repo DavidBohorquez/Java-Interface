@@ -5,8 +5,10 @@
  */
 package presentacion.modelo;
 
-import java.security.Principal;
+import presentacion.vistas.GraphicComponents;
+import presentacion.vistas.PersonalizedComponents;
 import presentacion.vistas.PrincipalView;
+import presentacion.vistas.ResourceManagement;
 
 /**
  *
@@ -14,6 +16,9 @@ import presentacion.vistas.PrincipalView;
  */
 public class Modelo {
     
+    private GraphicComponents components;
+    private PersonalizedComponents pzdComponents;
+    private ResourceManagement resources;
     private PrincipalView ventanaPrincipal;
     
     public Modelo() {
@@ -30,6 +35,27 @@ public class Modelo {
             ventanaPrincipal = new PrincipalView(this);
         }
         return ventanaPrincipal;
+    }
+
+    public GraphicComponents getComponents() {
+        if(components == null) {
+            components = new GraphicComponents();
+        }
+        return components;
+    }
+
+    public PersonalizedComponents getPzdComponents() {
+        if(pzdComponents == null) {
+            pzdComponents = new PersonalizedComponents();
+        }
+        return pzdComponents;
+    }
+
+    public ResourceManagement getResources() {
+        if(resources == null) {
+            resources = new ResourceManagement(getPzdComponents());
+        }
+        return resources;
     }
     
     
