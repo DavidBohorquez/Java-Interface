@@ -29,6 +29,9 @@ public class PrincipalView extends JFrame {
     private GraphicPanel pnlGraphic;
     private FooterPanel pnlFooter;
 
+    private int xMouse;
+    private int yMouse;
+
     public PrincipalView(Modelo modelo) {
         this.modelo = modelo;
 
@@ -53,6 +56,7 @@ public class PrincipalView extends JFrame {
         pnlGraphic.setBounds(258, 135, 960, 505);
         pnlFooter.setBounds(250, 670, 988, 30);
 
+        pnlBarMenu.setBackground(modelo.getResources().getColorAzulClaro());
         pnlHeader.setBackground(modelo.getResources().getColorAzulOscuro1());
         pnlInfo.setBackground(/*new Color(200, 224, 225)*/modelo.getResources().getColorBlanco());
         pnlMenu.setBackground(modelo.getResources().getColorAzulOscuro1());
@@ -85,7 +89,10 @@ public class PrincipalView extends JFrame {
     }
 
     public void asignarListeners() {
-        pnlBarMenu.addMouseListener(null);
+        pnlBarMenu.addMouseListener(getControlador());
+        pnlBarMenu.addMouseMotionListener(getControlador());
+
+        pnlBarMenu.getBtnClose().addActionListener(getControlador());
 
         pnlMenu.getBtnDashboard().addActionListener(getControlador());
         pnlMenu.getBtnTandP().addActionListener(getControlador());
@@ -114,6 +121,22 @@ public class PrincipalView extends JFrame {
 
     public BarMenuPanel getPnlBarMenu() {
         return pnlBarMenu;
+    }
+
+    public int getXMouse() {
+        return xMouse;
+    }
+
+    public int getYMouse() {
+        return yMouse;
+    }
+
+    public void setXMouse(int xMouse) {
+        this.xMouse = xMouse;
+    }
+
+    public void setYMouse(int yMouse) {
+        this.yMouse = yMouse;
     }
 
 }

@@ -40,48 +40,62 @@ public class PrincipalController implements ActionListener, MouseListener, Mouse
             System.out.println("ENTRO Mail!!!!");
         } else if (e.getSource().equals(ventana.getPnlMenu().getBtnComponents())) {
             System.out.println("ENTRO Components!!!!");
-        }else if (e.getSource().equals(ventana.getPnlMenu().getBtnCharts())) {
+        } else if (e.getSource().equals(ventana.getPnlMenu().getBtnCharts())) {
             System.out.println("ENTRO Charts!!!!");
         }
-    }
 
-    public PrincipalView getVentana() {
-        return ventana;
+        if (e.getSource().equals(ventana.getPnlBarMenu().getBtnClose())) {
+            System.out.println("EXIT!!!!!!!!!!!");
+            System.exit(0);
+        }
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        
+        ventana.setXMouse(e.getX());
+        ventana.setYMouse(e.getY());
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        
+        if (e.getSource().equals(ventana.getPnlBarMenu())) {
+            int x = e.getXOnScreen();
+            int y = e.getYOnScreen();
+
+            System.out.println(x + ", " + y);
+
+            ventana.setLocation(x - ventana.getXMouse(), y - ventana.getYMouse());
+        }
+
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        
+
+    }
+
+    public PrincipalView getVentana() {
+        return ventana;
     }
 
 }
