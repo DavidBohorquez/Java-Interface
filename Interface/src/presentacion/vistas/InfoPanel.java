@@ -30,14 +30,18 @@ public class InfoPanel extends JPanel {
     }
 
     private void initComponents(GraphicComponents components, ResourceManagement resources) {
-        imgPhoto = new ImageIcon(getClass().getResource(""));
+        imgPhoto = new ImageIcon(getClass().getResource("/resource/images/photography1.jpg"));
         imgProfile = new ImageIcon(getClass().getResource("/resource/images/profile.png"));
         imgSettings = new ImageIcon(getClass().getResource("/resource/images/settings.png"));
         imgPower = new ImageIcon(getClass().getResource("/resource/images/power.png"));
 
-        lblPhoto = components.devolverLabel(null, 85, 30, 80, 80, imgPhoto, null, new Color(200, 224, 225), null);
+        auxDimension = new ImageIcon(imgPhoto.getImage().getScaledInstance(80, 80, Image.SCALE_AREA_AVERAGING));
+
+        lblPhoto = components.devolverLabel(null, 85, 30, 80, 80, auxDimension, null, new Color(200, 224, 225), null);
+
         lblName = components.devolverLabel("Jasmin Leo", 25, 120, 200, 20, null, resources.getColorAzulClaro(), null, resources.getFuenteTitulo2());
         lblName.setHorizontalAlignment(SwingConstants.CENTER);
+
         lblOccupation = components.devolverLabel("<html><p style: text-align:center;>System Administrator in Company</p></html>",
                 55, 150, 150, 30, null, resources.getColorGrisOscuro(), null, resources.getFuenteTexto());
 

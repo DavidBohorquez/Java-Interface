@@ -26,6 +26,8 @@ public class ResourceManagement {
 
     private Border brdBlueRight;
 
+    private Border border1, border2, border3, border4, border5;
+
     public ResourceManagement(PersonalizedComponents cPersonalizados) {
         fuenteTitulo = new Font("Century Gothic", Font.BOLD, 35);
         fuenteTitulo2 = new Font("Century Gothic", Font.BOLD, 18);
@@ -51,6 +53,12 @@ public class ResourceManagement {
         tablaPersonalizada = cPersonalizados.devolverTablaPersonalizada(colorGrisBlanco, colorBlanco, colorAzul, colorGrisOscuro, fuenteTexto);
 
         brdBlueRight = BorderFactory.createMatteBorder(0, 0, 0, 1, colorAzulOscuro1);
+
+        border1 = BorderFactory.createLineBorder(new Color(246, 243, 247), 1, true);
+        border2 = BorderFactory.createLineBorder(new Color(241, 238, 242), 1, true);
+        border3 = BorderFactory.createCompoundBorder(border2, border1);
+        border4 = BorderFactory.createCompoundBorder(border3, border1);
+        border5 = BorderFactory.createLineBorder(new Color(246, 243, 247), 2, true);
     }
 
     public Color getColorAzul() {
@@ -145,6 +153,18 @@ public class ResourceManagement {
 
     public Font getFuenteTitulo3() {
         return fuenteTitulo3;
+    }
+
+    public Border getBorder1() {
+        return border1;
+    }
+
+    public Border getBorder3() {
+        return border3;
+    }
+
+    public Border getBorder5() {
+        return border5;
     }
 
 }

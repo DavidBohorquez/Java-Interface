@@ -7,6 +7,7 @@ package presentacion.vistas;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -27,7 +28,7 @@ public class GraphicPanel extends JPanel {
     }
 
     private void initComponents(GraphicComponents components, ResourceManagement resources) {
-        title = components.devolverLabel("Candlestcik Chart", 0, 0, 960, 65, null, resources.getColorGrisOscuro(), resources.getColorBlanco(), resources.getFuenteTitulo());
+        title = components.devolverLabel("Candlestcik Chart", 2, 2, 956, 65, null, resources.getColorGrisOscuro(), resources.getColorBlanco(), resources.getFuenteTitulo());
         title.setVerticalAlignment(SwingConstants.BOTTOM);
         title.setBorder(new EmptyBorder(0, 20, 0, 0));
 
@@ -42,7 +43,7 @@ public class GraphicPanel extends JPanel {
     public Canvas getLienzo() {
         if (lienzo == null) {
             lienzo = new Canvas();
-            lienzo.setBounds(0, 65, 960, 505);
+            lienzo.setBounds(2, 67, 956, 436);
             lienzo.setBackground(Color.white);
         }
         return lienzo;

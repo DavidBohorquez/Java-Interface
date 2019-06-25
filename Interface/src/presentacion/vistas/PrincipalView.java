@@ -6,8 +6,9 @@
 package presentacion.vistas;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.border.Border;
 import presentacion.controladores.PrincipalController;
 import presentacion.modelo.Modelo;
 
@@ -21,12 +22,12 @@ public class PrincipalView extends JFrame {
     private PrincipalController controlador;
 
     private MenuPanel pnlMenu;
+    private HeaderPanel pnlHeader;
+    private InfoPanel pnlInfo;
     private BarMenuPanel pnlBarMenu;
     private UpperPanel pnlUpper;
     private GraphicPanel pnlGraphic;
     private FooterPanel pnlFooter;
-    private InfoPanel pnlInfo;
-    private HeaderPanel pnlHeader;
 
     public PrincipalView(Modelo modelo) {
         this.modelo = modelo;
@@ -44,10 +45,6 @@ public class PrincipalView extends JFrame {
         pnlInfo = new InfoPanel(modelo.getComponents(), modelo.getResources());
         pnlHeader = new HeaderPanel(modelo.getComponents(), modelo.getResources());
 
-        //pie = new JPanel();
-        //grafica = new JPanel();
-        //info = new JPanel();
-        //augment = new JPanel();
         pnlBarMenu.setBounds(0, 0, 1238, 20);
         pnlHeader.setBounds(0, 20, 250, 50);
         pnlInfo.setBounds(0, 70, 250, 262);
@@ -60,10 +57,11 @@ public class PrincipalView extends JFrame {
         pnlInfo.setBackground(/*new Color(200, 224, 225)*/modelo.getResources().getColorBlanco());
         pnlMenu.setBackground(modelo.getResources().getColorAzulOscuro1());
         pnlUpper.setBackground(modelo.getResources().getColorBlanco());
-        pnlGraphic.setBackground(modelo.getResources().getColorAzul());
-        //grafica.setBackground(new Color(200, 224, 225));
+        pnlGraphic.setBackground(modelo.getResources().getColorBlanco());
         pnlFooter.setBackground(modelo.getResources().getColorAzulClaro());
-        //pie.setBackground(new Color(43, 203, 213));
+
+        pnlInfo.setBorder(modelo.getResources().getBorder3());
+        pnlGraphic.setBorder(modelo.getResources().getBorder5());
 
         add(pnlBarMenu);
         add(pnlHeader);
@@ -81,7 +79,7 @@ public class PrincipalView extends JFrame {
         setUndecorated(true);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        getContentPane().setBackground(modelo.getResources().getColorGrisClaro());
+        getContentPane().setBackground(/*modelo.getResources().getColorGrisClaro()*/Color.white);
         setSize(1238, 700);
         setLocationRelativeTo(null);
     }
