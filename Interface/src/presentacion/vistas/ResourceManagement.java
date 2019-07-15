@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 public class ResourceManagement {
 
     private Color colorAzul, colorAzulClaro, colorAzulOscuro, colorAzulOscuro1, colorBlanco, colorGrisBlanco, colorGrisClaro, colorGrisOscuro, colorMorado;
-    private Font fuenteTitulo, fuenteSubtitulo, fuenteTexto, fuenteTitulo2, fuenteTitulo3;
+    private Font fuenteTitulo, fuenteTitulo1, fuenteSubtitulo, fuenteSubtitulo1, fuenteTexto, fuenteTitulo2, fuenteTitulo3, fuenteTitulo4;
     private Border bordeGris, bordeInferiorMorado, bordeInferiorAzul, bordeDifuminado, bordeRedondeado, bordeCircular;
     private Cursor mano;
     private DefaultTableCellRenderer tablaPersonalizada;
@@ -30,9 +30,12 @@ public class ResourceManagement {
 
     public ResourceManagement(PersonalizedComponents cPersonalizados) {
         fuenteTitulo = new Font("Century Gothic", Font.BOLD, 35);
+        fuenteTitulo1 = new Font("Arial", Font.PLAIN, 28);
         fuenteTitulo2 = new Font("Century Gothic", Font.BOLD, 18);
         fuenteTitulo3 = new Font("Century Gothic", Font.PLAIN, 25);
+        fuenteTitulo4 = new Font("Comic Sans MS", Font.BOLD, 68);
         fuenteSubtitulo = new Font("Century Gothic", Font.PLAIN, 14);
+        fuenteSubtitulo1 = new Font("Arial", Font.BOLD, 12);
         fuenteTexto = new Font("Century Gothic", Font.PLAIN, 12);
         colorGrisClaro = new Color(200, 200, 200);
         colorGrisBlanco = new Color(245, 245, 245);
@@ -165,6 +168,18 @@ public class ResourceManagement {
 
     public Border getBorder5() {
         return border5;
+    }
+
+    public Font getFuenteTitulo1() {
+        return fuenteTitulo1;
+    }
+
+    public Font getFuenteSubtitulo1() {
+        return fuenteSubtitulo1;
+    }
+
+    public Font getFuenteTitulo4() {
+        return fuenteTitulo4;
     }
 
 }

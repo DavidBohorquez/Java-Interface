@@ -6,9 +6,7 @@
 package presentacion.vistas;
 
 import java.awt.Color;
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.border.Border;
 import presentacion.controladores.PrincipalController;
 import presentacion.modelo.Modelo;
 
@@ -29,6 +27,8 @@ public class PrincipalView extends JFrame {
     private GraphicPanel pnlGraphic;
     private FooterPanel pnlFooter;
 
+    private TPPanel pnlTP;
+
     private int xMouse;
     private int yMouse;
 
@@ -48,6 +48,8 @@ public class PrincipalView extends JFrame {
         pnlInfo = new InfoPanel(modelo.getComponents(), modelo.getResources());
         pnlHeader = new HeaderPanel(modelo.getComponents(), modelo.getResources());
 
+        pnlTP = new TPPanel(modelo.getComponents(), modelo.getResources());
+
         pnlBarMenu.setBounds(0, 0, 1238, 20);
         pnlHeader.setBounds(0, 20, 250, 50);
         pnlInfo.setBounds(0, 70, 250, 262);
@@ -56,6 +58,8 @@ public class PrincipalView extends JFrame {
         pnlGraphic.setBounds(258, 135, 960, 505);
         pnlFooter.setBounds(250, 670, 988, 30);
 
+        pnlTP.setBounds(258, 135, 960, 505);
+
         pnlBarMenu.setBackground(modelo.getResources().getColorAzulClaro());
         pnlHeader.setBackground(modelo.getResources().getColorAzulOscuro1());
         pnlInfo.setBackground(/*new Color(200, 224, 225)*/modelo.getResources().getColorBlanco());
@@ -63,6 +67,8 @@ public class PrincipalView extends JFrame {
         pnlUpper.setBackground(modelo.getResources().getColorBlanco());
         pnlGraphic.setBackground(modelo.getResources().getColorBlanco());
         pnlFooter.setBackground(modelo.getResources().getColorAzulClaro());
+
+        pnlTP.setBackground(modelo.getResources().getColorBlanco());
 
         pnlInfo.setBorder(modelo.getResources().getBorder3());
         pnlGraphic.setBorder(modelo.getResources().getBorder5());
@@ -74,6 +80,8 @@ public class PrincipalView extends JFrame {
         add(pnlUpper);
         add(pnlGraphic);
         add(pnlFooter);
+
+        add(pnlTP);
 
         /*users.setBackground(new Color(43, 203, 213));
          visitors.setBackground(new Color(16, 28, 98));
@@ -93,6 +101,11 @@ public class PrincipalView extends JFrame {
         pnlBarMenu.addMouseMotionListener(getControlador());
 
         pnlBarMenu.getBtnClose().addActionListener(getControlador());
+        pnlBarMenu.getBtnClose().addMouseListener(getControlador());
+        pnlBarMenu.getBtnChgSize().addActionListener(getControlador());
+        pnlBarMenu.getBtnChgSize().addMouseListener(getControlador());
+        pnlBarMenu.getBtnMinimize().addActionListener(getControlador());
+        pnlBarMenu.getBtnMinimize().addMouseListener(getControlador());
 
         pnlMenu.getBtnDashboard().addActionListener(getControlador());
         pnlMenu.getBtnTandP().addActionListener(getControlador());
@@ -102,6 +115,17 @@ public class PrincipalView extends JFrame {
         pnlMenu.getBtnMail().addActionListener(getControlador());
         pnlMenu.getBtnComponents().addActionListener(getControlador());
         pnlMenu.getBtnCharts().addActionListener(getControlador());
+
+        pnlMenu.getBtnDashboard().addMouseListener(getControlador());
+        pnlMenu.getBtnTandP().addMouseListener(getControlador());
+        pnlMenu.getBtnUi().addMouseListener(getControlador());
+        pnlMenu.getBtnTypo().addMouseListener(getControlador());
+        pnlMenu.getBtnPages().addMouseListener(getControlador());
+        pnlMenu.getBtnMail().addMouseListener(getControlador());
+        pnlMenu.getBtnComponents().addMouseListener(getControlador());
+        pnlMenu.getBtnCharts().addMouseListener(getControlador());
+
+        pnlHeader.getLblMenu().addMouseListener(getControlador());
     }
 
     public Modelo getModelo() {
@@ -121,6 +145,18 @@ public class PrincipalView extends JFrame {
 
     public BarMenuPanel getPnlBarMenu() {
         return pnlBarMenu;
+    }
+
+    public GraphicPanel getPnlGraphic() {
+        return pnlGraphic;
+    }
+
+    public TPPanel getPnlTP() {
+        return pnlTP;
+    }
+
+    public HeaderPanel getPnlHeader() {
+        return pnlHeader;
     }
 
     public int getXMouse() {

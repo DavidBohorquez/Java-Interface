@@ -38,7 +38,8 @@ public class InfoPanel extends JPanel {
         auxDimension = new ImageIcon(imgPhoto.getImage().getScaledInstance(80, 80, Image.SCALE_AREA_AVERAGING));
 
         lblPhoto = components.devolverLabel(null, 85, 30, 80, 80, auxDimension, null, new Color(200, 224, 225), null);
-
+        lblPhoto.setBorder(resources.getBordeCircular());
+        
         lblName = components.devolverLabel("Jasmin Leo", 25, 120, 200, 20, null, resources.getColorAzulClaro(), null, resources.getFuenteTitulo2());
         lblName.setHorizontalAlignment(SwingConstants.CENTER);
 

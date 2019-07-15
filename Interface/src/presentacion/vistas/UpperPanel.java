@@ -5,7 +5,6 @@
  */
 package presentacion.vistas;
 
-import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -30,14 +29,14 @@ public class UpperPanel extends JPanel {
 
         pnlUsers = components.devolverPanel(0, 0, 225, 80, resources.getColorAzulOscuro1(), null);
 
-        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo());
+        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo1());
         lblDay.setHorizontalAlignment(SwingConstants.CENTER);
         lblDay.setVerticalAlignment(SwingConstants.BOTTOM);
 
-        lblUsrName = components.devolverLabel("Users", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo());
+        lblUsrName = components.devolverLabel("Users", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo1());
         lblUsrName.setHorizontalAlignment(SwingConstants.CENTER);
 
-        lblUsrNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo());
+        lblUsrNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo1());
         lblUsrNumber.setHorizontalAlignment(SwingConstants.CENTER);
         lblUsrNumber.setText("90");
 
@@ -47,14 +46,14 @@ public class UpperPanel extends JPanel {
 
         pnlVisitors = components.devolverPanel(245, 0, 225, 80, resources.getColorAzulClaro(), null);
 
-        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo());
+        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo1());
         lblDay.setHorizontalAlignment(SwingConstants.CENTER);
         lblDay.setVerticalAlignment(SwingConstants.BOTTOM);
-        
-        lblVName = components.devolverLabel("Visitors", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo());
+
+        lblVName = components.devolverLabel("Visitors", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo1());
         lblVName.setHorizontalAlignment(SwingConstants.CENTER);
-        
-        lblVNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo());
+
+        lblVNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo1());
         lblVNumber.setHorizontalAlignment(SwingConstants.CENTER);
         lblVNumber.setText("85");
 
@@ -64,12 +63,12 @@ public class UpperPanel extends JPanel {
 
         pnlTasks = components.devolverPanel(490, 0, 225, 80, resources.getColorAzulOscuro1(), null);
 
-        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo());
+        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo1());
         lblDay.setHorizontalAlignment(SwingConstants.CENTER);
         lblDay.setVerticalAlignment(SwingConstants.BOTTOM);
-        lblTaskName = components.devolverLabel("Tasks", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo());
+        lblTaskName = components.devolverLabel("Tasks", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo1());
         lblTaskName.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTasksNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo());
+        lblTasksNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo1());
         lblTasksNumber.setHorizontalAlignment(SwingConstants.CENTER);
         lblTasksNumber.setText("51");
 
@@ -79,12 +78,12 @@ public class UpperPanel extends JPanel {
 
         pnlAlerts = components.devolverPanel(735, 0, 225, 80, resources.getColorAzulClaro(), null);
 
-        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo());
+        lblDay = components.devolverLabel("Today", 0, 0, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteSubtitulo1());
         lblDay.setHorizontalAlignment(SwingConstants.CENTER);
         lblDay.setVerticalAlignment(SwingConstants.BOTTOM);
-        lblAlertName = components.devolverLabel("Alerts", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo());
+        lblAlertName = components.devolverLabel("Alerts", 0, 40, 155, 40, null, resources.getColorBlanco(), null, resources.getFuenteTitulo1());
         lblAlertName.setHorizontalAlignment(SwingConstants.CENTER);
-        lblAlertsNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo());
+        lblAlertsNumber = components.devolverLabel(null, 155, 0, 68, 80, null, resources.getColorGrisOscuro(), resources.getColorGrisBlanco(), resources.getFuenteTitulo1());
         lblAlertsNumber.setHorizontalAlignment(SwingConstants.CENTER);
         lblAlertsNumber.setText("30");
 

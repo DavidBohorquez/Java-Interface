@@ -15,48 +15,47 @@ import presentacion.vistas.ResourceManagement;
  * @author David Bohorquez
  */
 public class Modelo {
-    
+
     private GraphicComponents components;
     private PersonalizedComponents pzdComponents;
     private ResourceManagement resources;
     private PrincipalView ventanaPrincipal;
-    
+
     public Modelo() {
-        
+
     }
-    
+
     public void iniciar() {
         getVentanaPrincipal();
         ventanaPrincipal.setVisible(true);
     }
 
     public PrincipalView getVentanaPrincipal() {
-        if(ventanaPrincipal == null) {
+        if (ventanaPrincipal == null) {
             ventanaPrincipal = new PrincipalView(this);
         }
         return ventanaPrincipal;
     }
 
     public GraphicComponents getComponents() {
-        if(components == null) {
+        if (components == null) {
             components = new GraphicComponents();
         }
         return components;
     }
 
     public PersonalizedComponents getPzdComponents() {
-        if(pzdComponents == null) {
+        if (pzdComponents == null) {
             pzdComponents = new PersonalizedComponents();
         }
         return pzdComponents;
     }
 
     public ResourceManagement getResources() {
-        if(resources == null) {
+        if (resources == null) {
             resources = new ResourceManagement(getPzdComponents());
         }
         return resources;
     }
-    
-    
+
 }

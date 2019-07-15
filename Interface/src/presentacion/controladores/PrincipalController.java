@@ -5,11 +5,15 @@
  */
 package presentacion.controladores;
 
+import java.awt.Cursor;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import presentacion.vistas.PrincipalView;
 
 /**
@@ -28,8 +32,14 @@ public class PrincipalController implements ActionListener, MouseListener, Mouse
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(ventana.getPnlMenu().getBtnDashboard())) {
             System.out.println("ENTRO DASH!!!!");
+
+            ventana.getPnlTP().setVisible(false);
+            ventana.getPnlGraphic().setVisible(true);
         } else if (e.getSource().equals(ventana.getPnlMenu().getBtnTandP())) {
             System.out.println("ENTRO P!!!!");
+
+            ventana.getPnlGraphic().setVisible(false);
+            ventana.getPnlTP().setVisible(true);
         } else if (e.getSource().equals(ventana.getPnlMenu().getBtnUi())) {
             System.out.println("ENTRO Ui!!!!");
         } else if (e.getSource().equals(ventana.getPnlMenu().getBtnTypo())) {
@@ -47,6 +57,10 @@ public class PrincipalController implements ActionListener, MouseListener, Mouse
         if (e.getSource().equals(ventana.getPnlBarMenu().getBtnClose())) {
             System.out.println("EXIT!!!!!!!!!!!");
             System.exit(0);
+        } else if (e.getSource().equals(ventana.getPnlBarMenu().getBtnChgSize())) {
+
+        } else if (e.getSource().equals(ventana.getPnlBarMenu().getBtnMinimize())) {
+            ventana.setExtendedState(Frame.ICONIFIED);
         }
     }
 
@@ -68,11 +82,53 @@ public class PrincipalController implements ActionListener, MouseListener, Mouse
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        if (e.getSource() instanceof JButton) {
+            JButton button = (JButton) e.getSource();
+
+            if ((button.equals(ventana.getPnlBarMenu().getBtnClose()))
+                    || (button.equals(ventana.getPnlBarMenu().getBtnChgSize()))
+                    || (button.equals(ventana.getPnlBarMenu().getBtnMinimize()))) {
+                button.setBackground(ventana.getModelo().getResources().getColorAzulOscuro1());
+            } else {
+                //if (e.getSource().equals(ventana.getPnlMenu().getBtnDashboard())) {
+                button.setBackground(ventana.getModelo().getResources().getColorAzulClaro());
+                //}
+            }
+        }
+
+        if (e.getSource() instanceof JLabel) {
+            JLabel lbl = (JLabel) e.getSource();
+
+            if (e.getSource().equals(ventana.getPnlHeader().getLblMenu())) {
+                ventana.getPnlHeader().changeIcon(1);
+            }
+            ventana.setCursor(ventana.getModelo().getResources().getMano());
+        }
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        if (e.getSource() instanceof JButton) {
+            JButton button = (JButton) e.getSource();
+
+            if ((button.equals(ventana.getPnlBarMenu().getBtnClose()))
+                    || (button.equals(ventana.getPnlBarMenu().getBtnChgSize()))
+                    || (button.equals(ventana.getPnlBarMenu().getBtnMinimize()))) {
+                button.setBackground(null);
+            } else {
+                button.setBackground(ventana.getModelo().getResources().getColorAzulOscuro1());
+            }
+        }
+
+        if (e.getSource() instanceof JLabel) {
+            JLabel lbl = (JLabel) e.getSource();
+
+            if (e.getSource().equals(ventana.getPnlHeader().getLblMenu())) {
+                ventana.getPnlHeader().changeIcon(0);
+            }
+            ventana.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        }
 
     }
 
